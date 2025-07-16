@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+
 vim.keymap.set("v", "jj", ":m '>+1<CR>gv=gv") -- Alt Up/Down in vscode
 vim.keymap.set("v", "kk", ":m '<-2<CR>gv=gv")
 
@@ -22,3 +24,7 @@ vim.keymap.set('v', '<leader>/', function()
     vim.api.nvim_feedkeys(esc, 'nx', false)
     require('Comment.api').toggle.linewise(vim.fn.visualmode())
 end, { desc = 'Toggle comment selection' })
+
+-- yank into clipboard even if on ssh
+vim.keymap.set('n', '<leader>y', '<Plug>OSCYankOperator')
+vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual')
