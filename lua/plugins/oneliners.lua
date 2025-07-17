@@ -23,4 +23,6 @@ return {
             })
         end
     },
+
+    { 'jose-elias-alvarez/typescript.nvim' },
 }

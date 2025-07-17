@@ -17,6 +17,7 @@ return {
     config = function()
         local autoformat_filetypes = {
             "lua",
+            "typescript",
         }
         -- Create a keymap for vim.lsp.buf.implementation
         vim.api.nvim_create_autocmd('LspAttach', {
