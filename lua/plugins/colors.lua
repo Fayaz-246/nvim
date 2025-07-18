@@ -1,38 +1,34 @@
-local function enable_transparency()
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-    vim.cmd('hi Directory guibg=NONE')
-    vim.cmd('hi SignColumn guibg=NONE')
-end
-
 return {
-    -- Example: use tokyonight with transparency
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     config = function()
-    --         vim.cmd.colorscheme("tokyonight-night")
-    --         enable_transparency()
-    --     end
-    -- },
 
-    -- Optional: another theme for fallback
-    -- {
-    -- "EdenEast/nightfox.nvim",
-    -- config = function()
-    -- vim.cmd.colorscheme("duskfox")
-    -- enable_transparency()
-    -- end
-    -- },
-
-    -- lualine setup using your custom theme name
-    {
-        "nvim-lualine/lualine.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
+  "nvim-lualine/lualine.nvim",
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  opts = {
+    -- theme = require('lualine.themes.owlet_charcoal')
+  },
+  config = function()
+    require("lualine").setup {
+      sections = {
+        lualine_a = {
+          {
+            'mode',
+            color = function()
+              local hl_map = {
+                n = 'LualineModeNormal',
+                i = 'LualineModeInsert',
+                v = 'LualineModeVisual',
+                V = 'LualineModeVisual',
+                [''] = 'LualineModeVisual',
+                R = 'LualineModeReplace',
+                c = 'LualineModeCommand',
+              }
+              return { gui = 'bold', highlight = hl_map[vim.fn.mode()] or 'LualineModeNormal' }
+            end
+          }
         },
-        opts = {
-            theme = 'auto', -- fallback to auto detect
-        }
-    },
+        -- other sections...
+      }
+    }
+  end
 }

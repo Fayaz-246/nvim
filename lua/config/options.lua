@@ -2,10 +2,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 
-vim.opt.shiftwidth = 2
-
 vim.opt.termguicolors = true
-
+vim.opt.showtabline = 2
 -- Better netrw visuals
 vim.g.netrw_banner = 0       -- disable banner
 vim.g.netrw_liststyle = 3    -- tree-style view (like NERDTree)
@@ -25,3 +23,5 @@ vim.opt.cindent = false -- Optional, useful only for C-style
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+
+vim.opt.clipboard = "unnamedplus"
