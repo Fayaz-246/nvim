@@ -15,9 +15,9 @@ vim.opt.scrolloff = 4        -- no extra lines below cursor
 vim.opt.virtualedit = "none" -- disallow cursor past end-of-line
 
 -- Enables smart and automatic indenting
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.cindent = false -- Optional, useful only for C-style
+-- vim.opt.autoindent = true
+-- vim.opt.smartindent = true
+-- vim.opt.cindent = false -- Optional, useful only for C-style
 
 -- Use spaces instead of tabs
 vim.opt.expandtab = true
