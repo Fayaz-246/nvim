@@ -5,12 +5,14 @@ return {
       require('nvim-highlight-colors').setup({})
     end
   },
-  { -- <leader>/ commenting
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
+
+  {
+    "numToStr/Comment.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
+
   { -- This helps with ssh tunneling and copying to clipboard
     'ojroques/vim-oscyank',
   },
@@ -24,9 +26,14 @@ return {
     end
   },
 
-  { 'jose-elias-alvarez/typescript.nvim' },
+  { "pmizio/typescript-tools.nvim" },
   {
     'wakatime/vim-wakatime',
     lazy = false
   },
+  {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    opts = {},
+  }
 }
